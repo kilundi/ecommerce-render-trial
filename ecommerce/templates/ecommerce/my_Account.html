@@ -46,13 +46,14 @@ My Account
                 {% for item in order.items.all %}
 
                 <div class="mb-4 flex pr-4">
-                    <a href="#" class="w-1/4">
+                    <a href="{% url 'products:product' item.product.pk item.product.slug %}" class="w-1/4">
                         <img class="rounded-xl" src=" {{item.product.get_thumbnail}} " alt="product image">
                     </a>
 
                     <div class="w-3/4 pl-4">
                         <div class="flex justify-between">
-                            <a href="#">{{item.product.name}}</a>
+                            <a
+                                href="{% url 'products:product' item.product.pk item.product.slug %}">{{item.product.name}}</a>
 
                             <p class="mb-6 pt-1 ">Ksh: {{item.get_total_price }} </p>
 
