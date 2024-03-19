@@ -1,0 +1,31 @@
+<div class="flex flex-wrap gap-3">
+    {% for product in products %}
+
+    <div
+        class="w-56 h-80 bg-gray-50 p-3 flex flex-col gap-1 rounded-2xl mt-4 shadow-[rgba(0,_0,_0,_0.4)_0px_30px_90px]">
+        <a href="{% url 'products:product' product.pk product.slug %}">
+            <div class="h-48  rounded-xl p-2">
+                <img src="{{ product.get_thumbnail }}" class="w-full  rounded-xl h-full  object-center object-fill"
+                    alt="product image">
+
+            </div>
+        </a>
+        <div class="flex flex-col gap-4">
+            <div class="flex flex-row justify-between">
+                <div class="flex flex-col">
+                    <span class="text-xl font-bold">{{product.name}}</span>
+                    <p class="text-xs text-gray-700">ID: {{product.id}}</p>
+                </div>
+                <div class="flex flex-col ">
+
+                    <span class="font-bold  text-red-600">Ksh: {{product.get_display_price}}</span>
+                    <span> Stock: {{product.stock}} </span>
+                </div>
+            </div>
+
+            {% include 'add_to_cart_btn.html' %}
+
+        </div>
+    </div>
+    {% endfor %}
+</div>
