@@ -43,3 +43,18 @@ class OrderItem(models.Model):
 
     def get_total_price(self):
         return self.price / 100
+
+
+class ContactUs(models.Model):
+    full_name = models.CharField(max_length=255)
+    email = models.CharField(max_length=255)
+    phone = models.CharField(max_length=255)
+    subject = models.CharField(max_length=255)
+    message = models.TextField(blank=True, null=True)
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return self.full_name
+
+    class Meta:
+        verbose_name_plural = 'Contact Us Entries'
