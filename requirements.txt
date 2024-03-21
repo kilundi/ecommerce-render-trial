@@ -11,6 +11,7 @@ crispy-tailwind==1.0.3
 Django==5.0.3
 django-browser-reload==1.12.1
 django-crispy-forms==2.1
+django-jazzmin==2.6.0
 django-tailwind==3.8.0
 idna==3.6
 Jinja2==3.1.3

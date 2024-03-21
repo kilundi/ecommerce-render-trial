@@ -25,36 +25,16 @@
                     <a href="{% url 'ecommerce:shop' %}"
                         class="block w-full py-2 px-4 rounded-xl text-sm hover:bg-gray-200">Shop</a>
                     {% endif %}
-                    <a href="#" class="block w-full py-2 px-4 text-sm hover:bg-gray-200 rounded-xl">About_us</a>
-                    <a href="#" class="block w-full py-2 px-4 text-sm hover:bg-gray-200 rounded-xl">Contact_us</a>
+                    <a href=" {% url 'ecommerce:AboutUsPage' %}  "
+                        class="block w-full py-2 px-4 text-sm hover:bg-gray-200 rounded-xl">About_us</a>
+                    <a href=" {% url 'ecommerce:contactUs' %} "
+                        class="block w-full py-2 px-4 text-sm hover:bg-gray-200 rounded-xl">Contact_us</a>
 
 
                 </div>
-                <!--
-                <div class="hidden md:flex items-center space-x-1 gap-4">
-
-                    <div
-                        class="py-2 px-3 bg-yellow-400 hover:bg-yellow-300 text-yellow-900 hover:text-yellow-800 rounded transition duration-300">
-                        <form method="post" action="#">
-                            {% csrf_token %}
-
-                            <button class=" font-bold" type="submit">Logout</button>
-                        </form>
-                    </div>
-
-                </div> -->
-
-                <!-- secondary nav -->
 
                 <div class="flex gap-4 items-center justify-center">
 
-                    <!-- <a class="hover:text-gray-200" href="#">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
-                            stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
-                        </svg>
-                    </a> -->
 
                     <!-- /////////////////////// -->
                     <div hx-get="{%url 'cart:hx_menu_cart' %}" hx-trigger="update-menu-cart from:body"
@@ -117,17 +97,6 @@
                     </div>
 
 
-                    <!-- <div class="hidden md:flex items-center space-x-1">
-
-                        <a href="#"
-                            class="py-2 px-3 text-yellow-900 hover:text-yellow-800 rounded transition duration-300">SignUp</a>
-                    </div>
-
-                    <div class="hidden md:flex items-center space-x-1">
-
-                        <a href="#"
-                            class="py-2 px-3 bg-yellow-400 hover:bg-yellow-300 text-yellow-900 hover:text-yellow-800 rounded transition duration-300">Login</a>
-                    </div> -->
 
 
                     <!-- mobile button goes here -->
@@ -166,12 +135,7 @@
                         </div>
                     </a>
 
-                    <!-- <a href="#" class="block w-full  text-sm ">
-                        <div
-                            class="flex   bg-slate-300 p-3 cursor-pointer rounded-xl justify-start items-center hover:text-SECONDARY1 hover:bg-slate-500 font-bold">
-                            About us
 
-                        </div>
                     </a> -->
                     <a href="#" class="block w-full  text-sm ">
                         <div

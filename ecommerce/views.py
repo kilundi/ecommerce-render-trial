@@ -19,6 +19,13 @@ from .forms import UpdateUserForm
 def Homepage(request):
     products = Product.objects.all()[0:8]
     return render(request, 'ecommerce/homepage.html', {'products': products})
+def AboutUsPage(request):
+
+    return render(request, 'ecommerce/aboutUs.html')
+
+def contactUs(request):
+
+    return render(request, 'ecommerce/contactUs.html')
 
 def SignUp(request):
 
