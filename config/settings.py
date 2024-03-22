@@ -169,6 +169,8 @@ MEDIA_ROOT = BASE_DIR / 'media/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
+APPEND_SLASH = False
+
 JAZZMIN_SETTINGS ={
     'site_header': "Ecommerce",
     'site_brand': 'You order, we deliver',

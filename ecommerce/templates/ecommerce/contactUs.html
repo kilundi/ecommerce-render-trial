@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 {% load static %}
-
+{% load tailwind_filters %}
 
 {% block title %}
 Contact Us
@@ -15,55 +15,69 @@ Contact Us
 {% block content %}
 
 <section class="">
-    <div class="py-8 lg:py-16 px-4 mx-auto max-w-screen-md">
-        <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-center ">Contact Us
-        </h2>
-        <p class="mb-8 lg:mb-16 font-light text-center sm:text-xl">Got a technical
-            issue? Want to send feedback about a beta feature? Need details about our Business plan? Let us know.</p>
-        <form id="contact-form" action="" class="space-y-8">
-            {% csrf_token %}
-            <div>
-                <label for="email" class="block mb-2 text-sm font-medium ">Your
-                    email</label>
-                <input type="email" name="email" id="email"
-                    class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500 dark:shadow-sm-light"
-                    placeholder="name@ecommerce.com" required>
+    {% include 'ecommerce/successModal_partial.html' %}
+    <div id="contact-form">
+
+        <div class="py-8 lg:py-16 px-4 mx-auto max-w-screen-md">
+            <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-center ">Contact Us</h2>
+            <p class="mb-8 lg:mb-16 font-light text-center sm:text-xl">Got a technical issue? Want to send feedback
+                about a
+                beta feature? Need details about our Business plan? Let us know.</p>
+
+
+            <div id="contact-form-container">
+
+                <form method="post" class="space-y-8">
+                    {% csrf_token %}
+                    <div>
+                        <label for="full_name" class="block mb-2 text-sm font-medium">Your Fullname</label>
+                        <input type="text" name="full_name" id="full_name" placeholder="Full name" required
+                            class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500 dark:shadow-sm-light">
+                    </div>
+                    <div>
+                        <label for="email" class="block mb-2 text-sm font-medium">Your email</label>
+                        <input type="email" name="email" id="email" placeholder="name@ecommerce.com" required
+                            class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500 dark:shadow-sm-light">
+                    </div>
+                    <div>
+                        <label for="phone" class="block mb-2 text-sm font-medium">Your phone</label>
+                        <input type="phone" name="phone" id="phone" placeholder="+254 10000000" required
+                            class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500 dark:shadow-sm-light">
+                    </div>
+                    <div>
+                        <label for="subject" class="block mb-2 text-sm font-medium">Subject</label>
+                        <input type="text" name="subject" id="subject" placeholder="Let us know how we can help you"
+                            required
+                            class="block p-3 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 shadow-sm focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500 dark:shadow-sm-light">
+                    </div>
+                    <div class="sm:col-span-2">
+                        <label for="message" class="block mb-2 text-sm font-medium">Your message</label>
+                        <textarea name="message" id="message" rows="6" placeholder="Leave a comment..."
+                            class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg shadow-sm border border-gray-300 focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500 dark:shadow-sm-light"></textarea>
+                    </div>
+                    <button type="submit"
+                        class="py-3 px-5 text-sm font-medium text-center rounded-lg bg-primary-700 sm:w-fit hover:bg-primary-800 focus:ring-4 focus:outline-none focus:ring-primary-300 dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800">Send
+                        message</button>
+                </form>
+
+                <!-- <form method="post" id="contact-form" class="space-y-8">
+                {% csrf_token %}
+
+                {{ form|crispy }}
+
+                <button type="submit"
+                    class="py-3 px-5 text-sm font-medium text-center  rounded-lg bg-primary-700 sm:w-fit hover:bg-primary-800 focus:ring-4 focus:outline-none focus:ring-primary-300 dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800">Send
+                    message</button>
+            </form> -->
             </div>
-            <div>
-                <label for="Phone" class="block mb-2 text-sm font-medium ">Your
-                    phone</label>
-                <input type="phone" name="phone" id="phone"
-                    class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500 dark:shadow-sm-light"
-                    placeholder="+254 10000000" required>
-            </div>
-            <div>
-                <label for="subject" class="block mb-2 text-sm font-medium ">Subject</label>
-                <input type="text" name="subject" id="subject"
-                    class="block p-3 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 shadow-sm focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500 dark:shadow-sm-light"
-                    placeholder="Let us know how we can help you" required>
-            </div>
-            <div class="sm:col-span-2">
-                <label for="message" class="block mb-2 text-sm font-medium ">Your
-                    message</label>
-                <textarea name="message" id="message" rows="6"
-                    class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg shadow-sm border border-gray-300 focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
-                    placeholder="Leave a comment..."></textarea>
-            </div>
-            <button type="submit"
-                class="py-3 px-5 text-sm font-medium text-center  rounded-lg bg-primary-700 sm:w-fit hover:bg-primary-800 focus:ring-4 focus:outline-none focus:ring-primary-300 dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800">Send
-                message</button>
-        </form>
+        </div>
     </div>
 </section>
 
 {% endblock content %}
 
-
-
-
 {% block js %}
 
-
-<!-- <script src="{% static 'js/contactUs.js' %}"></script> -->
-
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="{% static 'js/contactUs.js' %}"></script>
 {% endblock js %}

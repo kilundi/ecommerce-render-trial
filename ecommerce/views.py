@@ -1,7 +1,11 @@
 from django.db.models import Q
 from django.contrib.auth import login
+from django.http import HttpResponse, JsonResponse
 from django.shortcuts import render,redirect, get_object_or_404
-from .forms import SignUpForm
+
+from order.admin import ContactUsAdmin
+from order.models import ContactUs
+from .forms import ContactUsForm, SignUpForm
 from django.contrib.auth.models import User
 
 from django.db import IntegrityError
@@ -23,9 +27,42 @@ def AboutUsPage(request):
 
     return render(request, 'ecommerce/aboutUs.html')
 
-def contactUs(request):
+
+
+
+
+def contactUsView(request):
+
 
     return render(request, 'ecommerce/contactUs.html')
+
+def ajax_contact_form(request):
+    if request.method == 'POST':  # Ensure that this view is accessed via a POST request
+        full_name = request.POST.get('full_name')
+        email = request.POST.get('email')
+        phone = request.POST.get('phone')
+        subject = request.POST.get('subject')
+        message = request.POST.get('message')
+
+        # Create a ContactUs object and save it to the database
+        contact_entry = ContactUs.objects.create(
+            full_name=full_name,
+            email=email,
+            phone=phone,
+            subject=subject,
+            message=message,
+        )
+
+        # Return a JSON response indicating success
+        data = {
+            "bool": True,
+            "message": "Your message has been successfully sent!"
+        }
+        return JsonResponse({"data": data})
+    else:
+        # Return a JSON response indicating that the request method is not allowed
+        return JsonResponse({"error": "Method Not Allowed"}, status=405)
+
 
 def SignUp(request):
 

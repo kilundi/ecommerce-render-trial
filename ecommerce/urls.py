@@ -5,7 +5,8 @@ from . import views
 urlpatterns = [
  path('', views.Homepage, name='homepage'),
  path('AboutUsPage/', views.AboutUsPage, name='AboutUsPage'),
- path('contactUs/', views.contactUs, name='contactUs'),
+ path('contactUs/', views.contactUsView, name='contactUs'),
+ path('ajax_contact_form', views.ajax_contact_form, name='ajax_contact_form'),
  path('shop/', views.Shop, name='shop'),
  path('signup/', views.SignUp, name='signUp'),
  path('my_Account/', views.My_account, name='my_Account'),
