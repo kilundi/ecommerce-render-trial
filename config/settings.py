@@ -193,3 +193,27 @@ JAZZMIN_SETTINGS ={
     'site_logo': '/images/logo.jpg',
     'copyright': 'ecommerce.com',
 }
+
+
+
+
+
+# settings.py
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp-relay.brevo.com'
+EMAIL_PORT = 587
+EMAIL_HOST_USER = 'muthiani42@gmail.com'
+EMAIL_HOST_PASSWORD = '4GBZyzQKPkqFEDcC'
+DEFAULT_FROM_EMAIL = 'muthiani42@gmail.com'
+EMAIL_USE_TLS = True
+
+
+# EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+# EMAIL_HOST = 'live.smtp.mailtrap.io'
+# EMAIL_HOST_USER = 'api'
+# EMAIL_HOST_PASSWORD = 'e2e8e4d4e8e6fb32b13d5e7cfbe1a2e9'
+# EMAIL_PORT = '587'
+# EMAIL_USE_TLS = True
+# EMAIL_USE_SSL = False
+# DEFAULT_FROM_EMAIL = 'mailtrap@demomailtrap.com'

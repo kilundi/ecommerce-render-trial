@@ -19,9 +19,7 @@ from django.urls import path,include
 from django.conf.urls.static import static
 from django.conf import settings
 from django.contrib.auth import views
-
-
-
+from django.contrib.auth.views import PasswordResetView,PasswordResetConfirmView,PasswordResetDoneView,PasswordResetCompleteView
 urlpatterns = [
     path('logout/', views.LogoutView.as_view(), name='logout'),
     path('login/', views.LoginView.as_view(template_name='registration/login.html'), name='login'),
@@ -31,6 +29,15 @@ urlpatterns = [
     path('', include(('products.urls' , 'products'), namespace='products')),
     path('', include(('cart.urls' , 'cart'), namespace='cart')),
     path("__reload__/", include("django_browser_reload.urls")),
+
+
+    # passwordreset
+    path('reset-password/', PasswordResetView.as_view(), name='reset-password'),
+    path('password_reset_done/', PasswordResetDoneView.as_view(), name='password_reset_done'),
+    path('password_reset_complete/', PasswordResetCompleteView.as_view(),name='password_reset_complete'),
+    path('password_reset_confirm/<uidb64>/<token>/', PasswordResetConfirmView.as_view(), name = 'password_reset_confirm'),
+
+
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
