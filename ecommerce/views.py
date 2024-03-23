@@ -32,9 +32,15 @@ def AboutUsPage(request):
 
 
 def contactUsView(request):
-
-
     return render(request, 'ecommerce/contactUs.html')
+def meet_the_team(request):
+    return render(request, 'meetTheTeam.html')
+
+def privacy_Policy(request):
+    return render(request, 'privacyPolicy.html')
+
+def about_us(request):
+    return render(request, 'ecommerce/aboutUs.html')
 
 def ajax_contact_form(request):
     if request.method == 'POST':  # Ensure that this view is accessed via a POST request

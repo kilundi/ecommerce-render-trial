@@ -63,13 +63,12 @@
                         Company
                     </p>
                     <nav class="flex flex-col mt-4 space-y-2 text-sm text-gray-500">
-                        <a class="hover:opacity-75" href> About </a>
-                        <a class="hover:opacity-75" href> Meet the Team </a>
-                        <a class="hover:opacity-75" href> History </a>
-                        <a class="hover:opacity-75" href> Careers </a>
+                        <a href="{% url 'ecommerce:about_us' %}" class="hover:opacity-75" href> About </a>
+                        <a href="{% url 'ecommerce:meet_the_team' %}" class="hover:opacity-75" href> Meet the Team </a>
+
                     </nav>
                 </div>
-                <div>
+                <!-- <div>
                     <p class="font-medium">
                         Services
                     </p>
@@ -80,15 +79,15 @@
                         <a class="hover:opacity-75" href> HR Consulting </a>
                         <a class="hover:opacity-75" href> SEO Optimisation </a>
                     </nav>
-                </div>
+                </div> -->
                 <div>
                     <p class="font-medium">
                         Helpful Links
                     </p>
                     <nav class="flex flex-col mt-4 space-y-2 text-sm text-gray-500">
-                        <a class="hover:opacity-75" href> Contact </a>
-                        <a class="hover:opacity-75" href> FAQs </a>
-                        <a class="hover:opacity-75" href> Live Chat </a>
+                        <a href="{% url 'ecommerce:contactUs' %}" class="hover:opacity-75"> Contact </a>
+                        <!-- <a class="hover:opacity-75" href> FAQs </a>
+                        <a class="hover:opacity-75" href> Live Chat </a> -->
                     </nav>
                 </div>
                 <div>
@@ -96,16 +95,17 @@
                         Legal
                     </p>
                     <nav class="flex flex-col mt-4 space-y-2 text-sm text-gray-500">
-                        <a class="hover:opacity-75" href> Privacy Policy </a>
-                        <a class="hover:opacity-75" href> Terms &amp; Conditions </a>
+                        <a href="{% url 'ecommerce:privacy_Policy' %}" class="hover:opacity-75" href> Privacy Policy
+                        </a>
+                        <!-- <a class="hover:opacity-75" href> Terms &amp; Conditions </a>
                         <a class="hover:opacity-75" href> Returns Policy </a>
-                        <a class="hover:opacity-75" href> Accessibility </a>
+                        <a class="hover:opacity-75" href> Accessibility </a> -->
                     </nav>
                 </div>
             </div>
         </div>
         <p class="mt-8 text-xs text-gray-800">
-            © 2022 Comany Name
+            © 2022 Ecommerce
         </p>
     </div>
 </footer>

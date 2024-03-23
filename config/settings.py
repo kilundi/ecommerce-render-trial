@@ -110,12 +110,25 @@ WSGI_APPLICATION = 'config.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'ecommercedb',  # Replace 'your_database_name' with the name of your PostgreSQL database
+        'USER': 'muthi',       # Replace 'your_username' with your PostgreSQL username
+        'PASSWORD': 'kilundi',   # Replace 'your_password' with your PostgreSQL password
+        'HOST': 'localhost',           # Replace 'localhost' with the host of your PostgreSQL server if it's not running locally
+        'PORT': '5432',                # Replace '5432' with the port on which your PostgreSQL server is running if it's not the default
     }
 }
+
+
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+# }
 
 
 # Password validation
@@ -142,11 +155,14 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Africa/Nairobi'
+# TIME_ZONE = 'UTC'
 
 USE_I18N = True
 
+
 USE_TZ = True
+
 
 
 # Static files (CSS, JavaScript, Images)

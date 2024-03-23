@@ -34,6 +34,7 @@ $(document).on('submit', '#contact-form', function (e) {
             console.log("Sent data to server...");
             console.log(response.data.message);
             $("#contact-form").hide();
+            $("#iframe").hide();
             $("#message_response_container").removeClass("hidden");
             $("#message_response").html(response.data.message);
         }

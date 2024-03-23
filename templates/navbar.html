@@ -26,9 +26,9 @@
                         class="block w-full py-2 px-4 rounded-xl text-sm hover:bg-gray-200">Shop</a>
                     {% endif %}
                     <a href=" {% url 'ecommerce:AboutUsPage' %}  "
-                        class="block w-full py-2 px-4 text-sm hover:bg-gray-200 rounded-xl">About_us</a>
+                        class="block w-full py-2 px-4 text-sm hover:bg-gray-200 rounded-xl">About</a>
                     <a href=" {% url 'ecommerce:contactUs' %} "
-                        class="block w-full py-2 px-4 text-sm hover:bg-gray-200 rounded-xl">Contact_us</a>
+                        class="block w-full py-2 px-4 text-sm hover:bg-gray-200 rounded-xl">Contact</a>
 
 
                 </div>
@@ -62,8 +62,7 @@
                             aria-labelledby="dropdownDefaultButton">
                             {% if not request.user.is_authenticated %}
                             <li>
-                                <a href=" {% url 'ecommerce:signUp' %} "
-                                    class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">SignUp</a>
+                                <a href=" {% url 'ecommerce:signUp' %} " class="block px-4 py-2">SignUp</a>
                             </li>
                             <li>
                                 <a href="{% url 'login' %}"
@@ -127,20 +126,21 @@
                     </a>
                     {% endif %}
 
-                    <a href="#" class="block w-full  text-sm ">
+                    <a href="{% url 'ecommerce:AboutUsPage' %}" class="block w-full  text-sm ">
                         <div
                             class="flex   bg-slate-300 p-3 cursor-pointer rounded-xl justify-start items-center hover:text-SECONDARY1 hover:bg-slate-500 font-bold">
-                            About_us
+                            About
 
                         </div>
                     </a>
 
 
-                    </a> -->
-                    <a href="#" class="block w-full  text-sm ">
+
+                    </a>
+                    <a href="{% url 'ecommerce:contactUs' %}" class="block w-full  text-sm ">
                         <div
                             class="flex   bg-slate-300 p-3 cursor-pointer rounded-xl justify-start items-center hover:text-SECONDARY1 hover:bg-slate-500 font-bold">
-                            Contact us
+                            Contact
 
                         </div>
                     </a>
