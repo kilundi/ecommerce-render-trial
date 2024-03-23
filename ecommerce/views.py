@@ -21,7 +21,7 @@ from .forms import UpdateUserForm
 # Create your views here.
 
 def Homepage(request):
-    products = Product.objects.all()[0:8]
+    products = Product.objects.all()[0:11]
     return render(request, 'ecommerce/homepage.html', {'products': products})
 def AboutUsPage(request):
 
