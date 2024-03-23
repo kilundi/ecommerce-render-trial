@@ -17,9 +17,9 @@ env = environ.Env(
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 # Take environment variables from .env file
-READ_DOT_ENV_FILE = env.bool('READ_DOT_ENV_FILE', default=False)
-if READ_DOT_ENV_FILE:
-    environ.Env.read_env()
+# READ_DOT_ENV_FILE = env.bool('READ_DOT_ENV_FILE', default=False)
+# if READ_DOT_ENV_FILE:
+environ.Env.read_env()
 
 
 
