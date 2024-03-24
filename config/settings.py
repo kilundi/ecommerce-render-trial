@@ -50,7 +50,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # SECURITY WARNING: don't run with debug turned on in production!
 # DEBUG = env('DEBUG', False)
 
-ALLOWED_HOSTS = ['.vercel.app', '127.0.0.1', '.now.sh']
+ALLOWED_HOSTS = ['*']
 LOGOUT_REDIRECT_URL ='/'
 LOGIN_REDIRECT_URL ='/'
 LOGIN_URL = '/login/'
@@ -209,7 +209,7 @@ STATICFILES_DIRS = [
     BASE_DIR / 'static'
 ]
 # STATIC_ROOT = os.path.join(BASE_DIR, 'static_root')
-STATIC_ROOT = BASE_DIR / "staticfiles" / "static"
+STATIC_ROOT = BASE_DIR / "staticfiles"
 
 STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
