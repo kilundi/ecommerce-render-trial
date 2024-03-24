@@ -6,6 +6,8 @@ import os
 
 import environ
 import os
+import dj_database_url
+
 
 env = environ.Env(
     # set casting, default value
@@ -48,7 +50,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # SECURITY WARNING: don't run with debug turned on in production!
 # DEBUG = env('DEBUG', False)
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['.vercel.app', '127.0.0.1']
 LOGOUT_REDIRECT_URL ='/'
 LOGIN_REDIRECT_URL ='/'
 LOGIN_URL = '/login/'
@@ -136,16 +138,24 @@ WSGI_APPLICATION = 'config.wsgi.application'
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': env('DB_ENGINE'),
+#         'NAME': env('DB_NAME'),
+#         'USER': env('DB_USER'),
+#         'PASSWORD': env('DB_PASSWORD'),
+#         'HOST': env('DB_HOST'),
+#         'PORT': env('DB_PORT'),
+#     }
+# }
+
+DATABASE_URL = env('DATABASE_URL')
+
+
 DATABASES = {
-    'default': {
-        'ENGINE': env('DB_ENGINE'),
-        'NAME': env('DB_NAME'),
-        'USER': env('DB_USER'),
-        'PASSWORD': env('DB_PASSWORD'),
-        'HOST': env('DB_HOST'),
-        'PORT': env('DB_PORT'),
-    }
+    "default":dj_database_url.config(default=DATABASE_URL, conn_max_age=1800),
 }
+
 
 
 # DATABASES = {
@@ -199,7 +209,7 @@ STATICFILES_DIRS = [
     BASE_DIR / 'static'
 ]
 # STATIC_ROOT = os.path.join(BASE_DIR, 'static_root')
-STATIC_ROOT = BASE_DIR / "staticfiles"
+STATIC_ROOT = BASE_DIR / "staticfiles" / "static"
 
 STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
