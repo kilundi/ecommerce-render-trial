@@ -9,7 +9,7 @@ colorama==0.4.6
 cookiecutter==2.6.0
 crispy-tailwind==1.0.3
 dj-database-url==2.1.0
-Django==4.2.9
+Django==4.2
 django-browser-reload==1.12.1
 django-crispy-forms==2.1
 django-dotenv==1.4.2
@@ -23,7 +23,7 @@ MarkupSafe==2.1.5
 mdurl==0.1.2
 packaging==24.0
 pillow==10.2.0
-psycopg2-binary==2.9.1
+psycopg2-binary==2.9.9
 Pygments==2.17.2
 python-dateutil==2.9.0.post0
 python-slugify==8.0.4
