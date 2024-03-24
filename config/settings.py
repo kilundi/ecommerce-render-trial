@@ -247,3 +247,11 @@ EMAIL_HOST_USER = env('EMAIL_HOST_USER')
 EMAIL_HOST_PASSWORD = env('EMAIL_HOST_PASSWORD')
 DEFAULT_FROM_EMAIL = env('DEFAULT_FROM_EMAIL')
 EMAIL_USE_TLS = env('EMAIL_USE_TLS')
+
+
+# DB_ENGINE=django.db.backends.postgresql
+# DB_NAME=ecommercedb
+# DB_USER=muthi
+# DB_PASSWORD=kilundi
+# DB_HOST=localhost
+# DB_PORT=5432
