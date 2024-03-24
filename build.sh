@@ -7,16 +7,16 @@ source venv/Scripts/activate  # Adjust the path accordingly for Windows
 # Build the project
 echo "Building the project ..."
 
-python3.10 -m pip install -r requirements.txt
+python -m pip install -r requirements.txt
 
 echo "Making migrations ..."
-python3.10 manage.py makemigrations --noinput
+python manage.py makemigrations --noinput
 
 echo "Running migrations..."
-python3.10 manage.py migrate --noinput
+python manage.py migrate --noinput
 
 echo "Collecting Static..."
-python3.10 manage.py collectstatic --noinput --clear
+python manage.py collectstatic --noinput --clear
 
 # Start Tailwind CSS
 echo "Starting Tailwind CSS..."
