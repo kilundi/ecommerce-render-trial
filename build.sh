@@ -20,7 +20,7 @@ python3.10 manage.py collectstatic --noinput --clear
 
 # Start Tailwind CSS
 echo "Starting Tailwind CSS..."
-python3.10 manage.py tailwind start
+python manage.py tailwind start
 
 # Deactivate the virtual environment
 echo "Deactivating venv..."
